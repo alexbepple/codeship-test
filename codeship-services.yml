@@ -2,10 +2,14 @@ demo:
   build:
     image: myapp
     dockerfile_path: Dockerfile
+  cached: true
   links:
     - redis
     - postgres
 redis:
   image: redis:3.0.5
+  cached: true
 postgres:
-   image: postgres:9.3.6
+  image: postgres:9.3.6
+  cached: true
+
