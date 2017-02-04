@@ -14,4 +14,9 @@ ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install --jobs 20 --retry 5
 
+RUN curl --location --silent --show-error --fail \
+      -o /usr/local/bin/await \
+      https://github.com/betalo-sweden/await/releases/download/v0.4.0/await-linux-amd64 \
+ && chmod +x /usr/local/bin/await
+
 Add . /app
